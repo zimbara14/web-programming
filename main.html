@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Sara's blog</title>
+  <link href="CSS/style.css" rel="stylesheet">
+  <meta name="description" content="Personal blog about travelling, music and books.">
+  <meta name="keywords" content="music, books, travel, blog">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+<header>
+
+  <div class="site-logo">
+    <a href="#">
+      <img src="logo.png" alt="Sara's blog" width="238" height="238">
+    </a>
+  </div>
+
+  <nav>
+    <ul>
+      <li><a href="#">Путешествия</a></li>
+      <li><a href="#">Фотография</a></li>
+      <li><a href="#">Музыка</a></li>
+      <li><a href="#">Книги</a></li>
+      <li><a href="#">Обо мне</a></li>
+    </ul>
+  </nav>
+
+</header>
+
+<main>
+  <section>
+    <h1>Привет! Я Сара.</h1>
+    <p>
+      Я изучаю информатику и интересуюсь различными видами искусства, такими как литература, музыка и
+      фотография. Еще мне нравится путешествовать. Вот почему в этом блоге я в основном пишу о том, что мне нравится,
+      и я надеюсь, что вы найдете мои статьи и фотографии такими же захватывающими, как и я!
+    </p>
+    <aside>
+      Я так же говорю на трех языках:
+      <ul>
+        <li>Сербский</li>
+        <li>Английский</li>
+        <li>Русский</li>
+      </ul>
+    </aside>
+    <h2>Девиз жизни</h2>
+    <blockquote>
+      <p>
+        <i>„Чем больше <b>свободы</b> в человеке, тем <u>ярче</u> становится его жизнь.“</i>
+      </p>
+      <cite>Марк Орион</cite>
+    </blockquote>
+  </section>
+  <article>
+    <h2>Интересно:</h2>
+    <h3>Программирование</h3>
+    <p>Программа для нахождения факториала любого числа</p>
+    <pre class="line-numbers">
+      <code class="language-python">
+def findFactorial(n):
+  if n < 0:
+    return ("Sorry, factorial does not exist for negative numbers")
+  elif n == 0:
+    return 1
+  else:
+    factorial = 1
+    for i in range(1, n + 1):
+      factorial *= i
+    return factorial
+      </code>
+    </pre>
+    <h3>Математика</h3>
+    <pre>Тождество Эйлера
+      e<sup>i&pi;</sup> + 1 = 0</pre>
+    <h3>Картинка ASCII</h3>
+    <pre>
+      ..... (¯`v´¯)♥
+      .......•.¸.•´
+      ....¸.•´
+      ...(
+       ☻/
+      /▌♥♥
+      / \ ♥♥
+  </pre>
+  </article>
+</main>
+
+<footer>
+  <p>Copyright © 2021 Sara Nikolic</p>
+</footer>
+
+</body>
+</html>
