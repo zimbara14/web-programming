@@ -12,37 +12,126 @@
 
 <body>
 <header>
+  <div class="navbar">
+    <div class="header__logo">
+      <a href="main.html">
+        <img class="header__img" src="images/logo.png" alt="Sara's blog">
+      </a>
+    </div>
 
-  <div class="site-logo">
-    <a href="main.html">
-      <img src="#" alt="Sara's blog" width="238" height="238">
-    </a>
+    <nav class="header__menu">
+      <ul class="header__menu-list">
+        <li class="header__menu-item"><a class="header__menu-link" href="#travel">Путешествия</a></li>
+        <li class="header__menu-item"><a class="header__menu-link" href="#photo">Фотография</a></li>
+        <li class="header__menu-item"><a class="header__menu-link" href="#music">Музыка</a></li>
+        <li class="header__menu-item"><a class="header__menu-link" href="#books">Книги</a></li>
+        <li class="header__menu-item"><a class="header__menu-link" href="#about">Обо мне</a></li>
+      </ul>
+    </nav>
   </div>
-
-  <nav>
-    <ul>
-      <li><a href="#">Путешествия</a></li>
-      <li><a href="#">Фотография</a></li>
-      <li><a href="#">Музыка</a></li>
-      <li><a href="#">Книги</a></li>
-      <li><a href="#">Обо мне</a></li>
-    </ul>
-  </nav>
-
 </header>
 
 <main>
-  <section>
-    <h1>Привет, я Сара.</h1>
-    <p>
+
+  <section class="main">
+    <h1 class="main__header">Привет, я Сара.</h1>
+    <p class="main__paragraph">
       Это блог о путешествиях, фотографии, музыке и книгах. Я делюсь интересными и редкими вещами, которые нахожу в
       путешествиях и повседневной жизни.
     </p>
+    <img class="main__img" src="images/selfie.png" alt="Selfie">
   </section>
 
+  <section class="article" id="travel">
+    <h2 class="article__header">Путешествия</h2>
+    <article class="article__main">
+      <h3 class="article__main-title">Trip to Montenegro</h3>
+      <p class="article__datetime">July 2021 - August 2021 </p>
+      <p class="article__main-text">Lorem ipsum.</p>
+      <img class="article__image article__image_horizontal" id="horizontal" src="images/sea1.png" alt="My friend">
+      <img class="article__image article__image_vertical" src="images/sea2.png" alt="Me">
+      <img class="article__image article__image_vertical" src="images/sea3.png" alt="Fire by the sea">
+      <img class="article__image article__image_vertical" src="images/sea4.png" alt="Sea itself">
+    </article>
+    <article class="article__main">
+      <h3 class="article__main-title">Trip 2</h3>
+      <p class="article__main-text">Lorem ipsum.</p>
+    </article>
+    <article class="article__main">
+      <h3 class="article__main-title">Trip 3</h3>
+      <p class="article__main-text">Lorem ipsum.</p>
+    </article>
+  </section>
+
+  <section class="article" id="photo">
+    <h2 class="article__header">Фотография</h2>
+
+    <h3 class="article__main-title">Photos from Vyborg</h3>
+    <img class="article__image" src="#" alt="#">
+    <img class="article__image" src="#" alt="#">
+    <img class="article__image" src="#" alt="#">
+
+    <h3 class="article__main-title">Photos from Zurich</h3>
+    <img class="article__image" src="#" alt="#">
+    <img class="article__image" src="#" alt="#">
+    <img class="article__image" src="#" alt="#">
+
+    <h3 class="article__main-title">Photos from Montenegro</h3>
+    <img class="article__image article__image_horizontal" src="images/mng1.JPG" alt="Random people">
+    <img class="article__image article__image_vertical" src="images/mng2.JPG" alt="Friends">
+    <img class="article__image article__image_horizontal" src="images/mng3.JPG" alt="Random people 2">
+
+  </section>
+
+  <section class="article" id="music">
+    <h2 class="article__header">Музыка</h2>
+
+    <h3 class="article__main-title">Song of the day</h3>
+    <p class="article__main-text">sdfasf - <span class="article__main-text-author">dfaf</span></p>
+
+    <h3 class="article__main-title">Playlists</h3>
+    <a class="article__link" href="#"><img class="article__image" id="apple" src="#" alt="Apple Music"></a>
+    <a class="article__link" href="https://open.spotify.com/playlist/4AnImz0czvZYhnzT8mY0B2?si=AmiP5I7lQfm3aq6UlVdDSA&nd=1" target="_blank"><img class="article__image" id="spotify" src="#" alt="Spotify"></a>
+    <a class="article__link" href="https://www.youtube.com/watch?v=duY6SzYHsa0" target="_blank">YouTube link 1</a>
+    <a class="article__link" href="https://www.youtube.com/watch?v=yUXK7AxIBx0&t=2411s" target="_blank">YouTube link 2</a>
+    <a class="article__link" href="https://www.youtube.com/watch?v=-r679Hhs9Zs&list=PL7DlGI0vwP4S6tlQ-kMqrl6VCaN053_BN" target="_blank">YouTube link 3</a>
+  </section>
+
+  <section class="travel" id="books">
+    <h2 class="article__header">Книги</h2>
+
+    <h3 class="article__main-title">Top 5 sad books to read</h3>
+    <p class="article__main-text">This is my list for reading</p>
+    <ol class="article__ol">
+      <li class="article__ol-item">The Fault in our Stars - <span class="article__main-text-author">John Green</span></li>
+      <li class="article__ol-item"></li>
+      <li class="article__ol-item"></li>
+      <li class="article__ol-item"></li>
+      <li class="article__ol-item"></li>
+      <li class="article__ol-item"></li>
+    </ol>
+
+    <h3 class="article__main-title">Trending now</h3>
+    <p class="article__main-text">Books everyone is reading now:</p>
+    <ol class="article__ol">
+      <li class="article__ol-item"></li>
+      <li class="article__ol-item"></li>
+      <li class="article__ol-item"></li>
+      <li class="article__ol-item"></li>
+      <li class="article__ol-item"></li>
+      <li class="article__ol-item"></li>
+    </ol>
+
+  </section>
+
+  <section class="travel" id="about">
+    <h2 class="article__header">Обо мне</h2>
+    <p class="article__main-text"> You can check out my profiles on <a href="https://www.instagram.com/zimb6" target="_blank">instagram</a>
+      and <a href="https://www.facebook.com/reka.pesma" target="_blank">facebook</a>.</p>
+  </section>
 </main>
 
-<footer>
+<footer class="footer">
   <p>Copyright &copy; 2021 Sara Nikolic</p>
 </footer>
 
