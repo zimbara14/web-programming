@@ -11,7 +11,7 @@
 </head>
 
 <body>
-<header>
+<header class="header">
   <div class="navbar">
     <div class="header__logo">
       <a href="main.html">
@@ -48,7 +48,7 @@
       <h3 class="article__main-title">Trip to Montenegro</h3>
       <p class="article__datetime">July 2021 - August 2021 </p>
       <p class="article__main-text">Lorem ipsum.</p>
-      <img class="article__image article__image_horizontal" id="horizontal" src="images/sea1.png" alt="My friend">
+      <img class="article__image article__image_horizontal" src="images/sea1.png" alt="My friend">
       <img class="article__image article__image_vertical" src="images/sea2.png" alt="Me">
       <img class="article__image article__image_vertical" src="images/sea3.png" alt="Fire by the sea">
       <img class="article__image article__image_vertical" src="images/sea4.png" alt="Sea itself">
@@ -67,14 +67,18 @@
     <h2 class="article__header">Фотография</h2>
 
     <h3 class="article__main-title">Photos from Vyborg</h3>
-    <img class="article__image" src="#" alt="#">
-    <img class="article__image" src="#" alt="#">
-    <img class="article__image" src="#" alt="#">
+    <img class="article__image article__image_vertical" src="images/vyb1.png" alt="Random building">
+    <img class="article__image article__image_horizontal" src="images/vyb2.png" alt="Manana">
+    <img class="article__image article__image_vertical" src="images/vyb3.png" alt="Russian flag">
+    <img class="article__image article__image_vertical" src="images/vyb4.png" alt="Canoe">
+    <img class="article__image article__image_vertical" src="images/vyb5.png" alt="Red building">
 
     <h3 class="article__main-title">Photos from Zurich</h3>
-    <img class="article__image" src="#" alt="#">
-    <img class="article__image" src="#" alt="#">
-    <img class="article__image" src="#" alt="#">
+    <img class="article__image article__image_vertical" src="images/zur1.png" alt="Vader">
+    <img class="article__image article__image_horizontal" src="images/zur2.png" alt="Onigiri">
+    <img class="article__image article__image_vertical" src="images/zur3.png" alt="Shop">
+    <img class="article__image article__image_horizontal" src="images/zur4.png" alt="Dynamo">
+    <img class="article__image article__image_vertical" src="images/zur5.png" alt="Me">
 
     <h3 class="article__main-title">Photos from Montenegro</h3>
     <img class="article__image article__image_horizontal" src="images/mng1.JPG" alt="Random people">
@@ -87,11 +91,12 @@
     <h2 class="article__header">Музыка</h2>
 
     <h3 class="article__main-title">Song of the day</h3>
-    <p class="article__main-text">sdfasf - <span class="article__main-text-author">dfaf</span></p>
+    <a class="article__link" href="https://www.youtube.com/watch?v=GNth4yhlffU" target="_blank">GORRILAZ - <span class="article__main-text-author">Empire Ants</span></a>
 
     <h3 class="article__main-title">Playlists</h3>
-    <a class="article__link" href="#"><img class="article__image" id="apple" src="#" alt="Apple Music"></a>
-    <a class="article__link" href="https://open.spotify.com/playlist/4AnImz0czvZYhnzT8mY0B2?si=AmiP5I7lQfm3aq6UlVdDSA&nd=1" target="_blank"><img class="article__image" id="spotify" src="#" alt="Spotify"></a>
+    <p>Click any of the links beneath to listen to the music I like!</p>
+    <a href="https://music.apple.com/ru/playlist/summer-vibes/pl.u-2aoqXVLfGbmDm8e?l=en" target="_blank"><img class="article__image article__image_small" src="images/apple.png" alt="Apple Music"></a>
+    <a href="https://open.spotify.com/playlist/4AnImz0czvZYhnzT8mY0B2?si=AmiP5I7lQfm3aq6UlVdDSA&nd=1" target="_blank"><img class="article__image article__image_small" src="images/spotify.png" alt="Spotify"></a>
     <a class="article__link" href="https://www.youtube.com/watch?v=duY6SzYHsa0" target="_blank">YouTube link 1</a>
     <a class="article__link" href="https://www.youtube.com/watch?v=yUXK7AxIBx0&t=2411s" target="_blank">YouTube link 2</a>
     <a class="article__link" href="https://www.youtube.com/watch?v=-r679Hhs9Zs&list=PL7DlGI0vwP4S6tlQ-kMqrl6VCaN053_BN" target="_blank">YouTube link 3</a>
@@ -113,8 +118,7 @@
 
     <h3 class="article__main-title">Trending now</h3>
     <p class="article__main-text">Books everyone is reading now:</p>
-    <ol class="article__ol">
-      <li class="article__ol-item"></li>
+    <ol class="article__ol" type="I">
       <li class="article__ol-item"></li>
       <li class="article__ol-item"></li>
       <li class="article__ol-item"></li>
@@ -126,8 +130,8 @@
 
   <section class="travel" id="about">
     <h2 class="article__header">Обо мне</h2>
-    <p class="article__main-text"> You can check out my profiles on <a href="https://www.instagram.com/zimb6" target="_blank">instagram</a>
-      and <a href="https://www.facebook.com/reka.pesma" target="_blank">facebook</a>.</p>
+    <p class="article__main-text"> You can check out my profiles on <a class="article__link" href="https://www.instagram.com/zimb6" target="_blank">instagram</a>
+      and <a class="article__link" href="https://www.facebook.com/reka.pesma" target="_blank">facebook</a>.</p>
   </section>
 </main>
 
