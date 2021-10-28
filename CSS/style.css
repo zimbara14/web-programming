@@ -213,6 +213,11 @@ section {
 .article__image_small {
     width: 50px;
     height: 50px;
+    transition: none;
+}
+
+.article__image_small:hover {
+    transform: none;
 }
 
 .article__link {
