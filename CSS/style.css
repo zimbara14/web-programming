@@ -255,6 +255,7 @@ section {
     color: white;
     border: #b39959 solid 1px;
     display: inline;
+    background-color:rgba(179, 153, 89, 0.5);
 }
 
 .article__music {
