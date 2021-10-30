@@ -113,7 +113,7 @@ main {
     padding: 25px;
     align-content: center;
     grid-gap: 0;
-    outline: deeppink solid 5px;
+    #outline: deeppink solid 5px;
     overflow: scroll;
     min-width: auto;
     min-height: auto;
