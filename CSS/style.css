@@ -235,6 +235,26 @@ section {
     height: 40px
 }
 
+.article__gallery {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: flex-start;
+    box-sizing: border-box;
+    padding: inherit;
+    width: 100%;
+    flex-wrap: nowrap;
+    min-height: 0;
+    min-width: 0;
+    border: beige dashed 1px;
+    overflow-x: scroll;
+}
+
+.article__gallery-item {
+    margin: 10px;
+    overflow-y: visible;
+}
+
 .article__link {
     color: white;
     background-color: #99b4ff;
