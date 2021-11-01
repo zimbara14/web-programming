@@ -384,18 +384,20 @@ section {
         height: 70px;
     }
     .main__img_big {
-        width: 200px;
-        height: 70px;
+        width: 300px;
+        height: 120px;
     }
     .main__header {
         width: 200px;
         height: 30px;
+        margin: 5px 0;
         font-size: 50%;
     }
     .main__paragraph {
         width: 200px;
-        height: 30px;
+        height: 80px;
         font-size: 30%;
+        padding: 5px;
     }
     .article__header {
         font-size: 50%;
