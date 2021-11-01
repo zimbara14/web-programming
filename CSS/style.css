@@ -390,25 +390,40 @@ section {
     .main__header {
         width: 200px;
         height: 30px;
-        font-size: 0.7rem;
+        font-size: 50%;
     }
     .main__paragraph {
         width: 200px;
         height: 30px;
-        font-size: 0.7rem;
+        font-size: 50%;
     }
     .article__header {
-        font-size: 0.7rem;
+        font-size: 50%;
     }
     .article__main-title {
-        font-size: 0.7rem;
+        font-size: 50%;
     }
     .article__main-text {
-        font-size: 0.7rem;
+        font-size: 50%;
     }
     .table {
         font-size: 50%;
         overflow: hidden;
+    }
+    .article__link {
+        font-size: 50%;
+    }
+    .article__music-name {
+        font-size: 50%;
+    }
+    .article__datetime {
+        font-size: 50%;
+    }
+    .footer {
+        font-size: 50%;
+    }
+    #books {
+        font-size: 50%;
     }
 }
 
