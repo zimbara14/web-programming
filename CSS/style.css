@@ -1,8 +1,8 @@
-
+/*
 * {
     outline: 1px solid blue;
 }
-
+*/
 body {
     margin: 0;
     background: #ffe9b3;
@@ -29,6 +29,8 @@ header {
     justify-content: space-between;
     width: 100%;
     margin: 0 auto;
+    flex-wrap: wrap;
+    overflow: auto;
 }
 
 .header {
@@ -42,10 +44,12 @@ header {
     justify-content: space-between;
     */
 }
+
 .header__logo {
     margin: 0;
     padding-right: 0;
 }
+
 .header__img {
     /* float: left; */
     width: 220px;
@@ -109,12 +113,16 @@ main {
     padding: 25px;
     align-content: center;
     grid-gap: 0;
+    overflow: scroll;
+    min-width: auto;
+    min-height: auto;
 }
 
 section {
     margin: 0;
     padding: 0
 }
+
 .main__header {
     font-size: 2rem;
     margin: 10px 10px 5px;
@@ -146,6 +154,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
+    min-width: 0;
 }
 
 .main__img {
@@ -193,6 +202,7 @@ section {
     border: 1px solid black;
     transition: all .3s ease-in-out;
     margin: 0 10px;
+    #display: inline-block;
 }
 
 .article__image:hover {
@@ -213,6 +223,35 @@ section {
 .article__image_small {
     width: 50px;
     height: 50px;
+    transition: none;
+}
+
+.article__image_small:hover {
+    transform: none;
+}
+
+.article__image_small-vertical {
+    height: 40px
+}
+
+.article__gallery {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: flex-start;
+    box-sizing: border-box;
+    padding: inherit;
+    width: 100%;
+    flex-wrap: nowrap;
+    min-height: 0;
+    min-width: 0;
+    border: beige dashed 1px;
+    overflow-x: scroll;
+}
+
+.article__gallery-item {
+    margin: 10px;
+    overflow-y: visible;
 }
 
 .article__link {
@@ -230,14 +269,183 @@ section {
     font-style: italic;
 }
 
+.article__datetime {
+    font-style: italic;
+    color: white;
+    border: #b39959 solid 1px;
+    display: inline;
+    background-color:rgba(179, 153, 89, 0.5);
+}
+
+.article__music {
+    display: flex;
+    margin: 0;
+    box-sizing: border-box;
+    justify-content: space-evenly;
+    padding: inherit;
+    width: 100%;
+    overflow: auto;
+    flex-wrap: wrap;
+    min-height: 0;
+    min-width: 0;
+}
+
+.article__music-item {
+    margin: 10px;
+    outline: beige solid 1px;
+    display: inline-flex;
+    justify-content: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: fit-content;
+    min-width: 0;
+    overflow: scroll;
+    align-content: center;
+    align-items: center;
+}
+
+.article__music-name {
+    padding: 10px;
+    margin: 0;
+    display: inline;
+}
+
+.article__link_music {
+    align-content: center;
+}
+
+.article__image_music {
+    border: none;
+    padding: 5px 0;
+}
+
+/* ✓ */
+
+.table {
+    display: grid;
+    font-weight: 400;
+    margin: 1%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+    border: beige solid 1px;
+    overflow: scroll;
+}
+
+.table__cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+    border: #ffe9b3 solid 1px;
+}
+
+.table__cell_header {
+    font-weight: 900;
+    background: #b39959;
+    color: white;
+}
+
+.table__row {
+    display: grid;
+    grid-template-columns: 60px repeat(7, minmax(100px, 1fr));
+    justify-content: center;
+}
+
+.table__row:nth-of-type(odd) {
+    background: white;
+}
+
+.table__row:nth-of-type(even) {
+    background: beige;
+}
+
 /* footer */
 .footer {
     margin: 0;
-    position: relative;
+    position: absolute;
     box-sizing: border-box;
     padding: 5px 80px;
-   /* bottom: 0; */
     width: 100%;
     background-color: #4764B3;
     text-align: center;
+
+}
+
+/* media */
+@media screen and (max-width: 480px) {
+    .navbar {
+        overflow: scroll;
+    }
+    .header__menu-link {
+        font-size: 0.7rem;
+        width: 70%;
+    }
+    .header__img {
+        width: 100px;
+        height: 70px;
+    }
+    .main__img {
+        padding: 0;
+        margin: 0;
+    }
+    .main__img_big {
+        width: 300px;
+        height: 120px;
+    }
+    .main__header {
+        width: 200px;
+        height: 30px;
+        margin: 5px 0;
+        font-size: 50%;
+    }
+    .main__paragraph {
+        width: 200px;
+        height: 80px;
+        font-size: 30%;
+        padding: 5px;
+    }
+    .article__header {
+        font-size: 50%;
+    }
+    .article__main-title {
+        font-size: 50%;
+    }
+    .article__main-text {
+        font-size: 50%;
+    }
+    .table {
+        font-size: 50%;
+        overflow: hidden;
+    }
+    .table__cell{
+        font-size: 50%;
+    }
+    .article__link {
+        font-size: 50%;
+    }
+    .article__music-name {
+        font-size: 50%;
+    }
+    .article__datetime {
+        font-size: 50%;
+    }
+    .footer {
+        font-size: 50%;
+    }
+    #books {
+        font-size: 50%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .table {
+        font-size: 80%;
+        overflow: scroll;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .article__gallery {
+        overflow-x: scroll;
+        overflow-y: visible;
+    }
 }
