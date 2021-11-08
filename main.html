@@ -6,6 +6,8 @@
   <title>Sara's blog</title>
   <link href="CSS/style.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
+  <script src="JS/active.js"></script>
+  <script src="JS/time.js"></script>
   <meta name="description" content="Personal blog about travelling, music and books.">
   <meta name="keywords" content="music, books, travel, blog">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,18 +24,19 @@
 
     <nav class="header__menu">
       <ul class="header__menu-list">
-        <li class="header__menu-item"><a class="header__menu-link" href="#travel">Путешествия</a></li>
-        <li class="header__menu-item"><a class="header__menu-link" href="#photo">Фотография</a></li>
-        <li class="header__menu-item"><a class="header__menu-link" href="#music">Музыка</a></li>
-        <li class="header__menu-item"><a class="header__menu-link" href="#books">Книги</a></li>
-        <li class="header__menu-item"><a class="header__menu-link" href="#about">Обо мне</a></li>
+        <li class="header__menu-item"><a class="header__menu-link" href="main.html">Главная</a></li>
+        <li class="header__menu-item"><a class="header__menu-link" href="main.html#travel">Путешествия</a></li>
+        <li class="header__menu-item"><a class="header__menu-link" href="main.html#photo">Фотография</a></li>
+        <li class="header__menu-item"><a class="header__menu-link" href="main.html#music">Музыка</a></li>
+        <li class="header__menu-item"><a class="header__menu-link" href="main.html#books">Книги</a></li>
+        <li class="header__menu-item"><a class="header__menu-link" href="second.html">another one</a></li>
+        <li class="header__menu-item"><a class="header__menu-link" href="main.html#about">Обо мне</a></li>
       </ul>
     </nav>
   </div>
 </header>
 
 <main>
-
   <section class="main">
     <h1 class="main__header">Привет, я Сара.</h1>
     <p class="main__paragraph">
@@ -42,6 +45,8 @@
     </p>
     <img class="main__img main__img_big" src="images/main.png" alt="Main">
   </section>
+
+  <span id="loadtime"></span>
 
   <section class="article" id="travel">
     <h2 class="article__header">Путешествия</h2>
