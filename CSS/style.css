@@ -32,16 +32,16 @@ header {
     width: 100%;
     margin: 0 auto;
     flex-wrap: wrap;
-    overflow: auto;
 }
 
 .header {
+    position: sticky;
     background: #4764B3;
     width: 100%;
     margin: 0;
     #padding: 0;
-    z-index: 3;
     height: 10%;
+    top: 0;
     /*
     display: flex;
     justify-content: space-between;
