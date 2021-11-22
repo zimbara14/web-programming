@@ -4,6 +4,7 @@
 }
 */
 body {
+    position: relative;
     margin: 0;
     background: #ffe9b3;
     font-family: 'Raleway', sans-serif;
@@ -12,6 +13,7 @@ body {
     font-weight: normal;
     box-sizing: border-box;
     background: linear-gradient(#ffe9b3, #99b4ff);
+    min-height: 90%;
 }
 
 /* header */
@@ -30,15 +32,17 @@ header {
     width: 100%;
     margin: 0 auto;
     flex-wrap: wrap;
-    overflow: auto;
 }
 
 .header {
-    position: relative;
+    position: sticky;
     background: #4764B3;
     width: 100%;
     margin: 0;
     #padding: 0;
+    height: 10%;
+    top: 0;
+    z-index: 999;
     /*
     display: flex;
     justify-content: space-between;
@@ -52,8 +56,8 @@ header {
 
 .header__img {
     /* float: left; */
-    width: 220px;
-    height: 170px;
+    width: 100px;
+    height: 70px;
     transition: all .3s ease-in-out;
 }
 
@@ -72,6 +76,7 @@ header {
     margin: 0;
     padding: 0;
     list-style: none;
+    flex-wrap: wrap;
 }
 
 .header__menu-item {
@@ -79,8 +84,15 @@ header {
     display: inline-flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    align-content: center;
     margin: 10px 15px;
     width: auto;
+}
+
+.header__menu-item_active {
+    padding: 5px;
+    border: beige dotted 1px;
+    border-radius: 5px;
 }
 
 .header__menu-link {
@@ -102,9 +114,11 @@ main {
     width: 100%;
     box-sizing: border-box;
     padding: 0 80px;
+    height: 100%;
 }
 
 .main {
+    z-index: 1;
     text-align: justify;
     display: grid;
     box-sizing: border-box;
@@ -242,16 +256,14 @@ section {
     box-sizing: border-box;
     padding: inherit;
     width: 100%;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     min-height: 0;
     min-width: 0;
     border: beige dashed 1px;
-    overflow-x: scroll;
 }
 
 .article__gallery-item {
     margin: 10px;
-    overflow-y: visible;
 }
 
 .article__link {
@@ -299,7 +311,6 @@ section {
     box-sizing: border-box;
     width: fit-content;
     min-width: 0;
-    overflow: scroll;
     align-content: center;
     align-items: center;
 }
@@ -359,15 +370,29 @@ section {
 }
 
 /* footer */
+
 .footer {
+    bottom: 0;
     margin: 0;
-    position: absolute;
+    #position: relative;
     box-sizing: border-box;
     padding: 5px 80px;
     width: 100%;
     background-color: #4764B3;
     text-align: center;
+    color: white;
+}
 
+.footer-two {
+    background-color: #4764B3;
+    text-align: center;
+    color: white;
+    box-sizing: border-box;
+    padding: 5px 80px;
+
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 /* media */
@@ -447,5 +472,14 @@ section {
     .article__gallery {
         overflow-x: scroll;
         overflow-y: visible;
+    }
+    .header__logo {
+        display: none;
+    }
+    .article__gallery {
+        overflow: scroll;
+    }
+    .main {
+        display: block;
     }
 }
