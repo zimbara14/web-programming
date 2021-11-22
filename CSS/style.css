@@ -76,6 +76,7 @@ header {
     margin: 0;
     padding: 0;
     list-style: none;
+    flex-wrap: wrap;
 }
 
 .header__menu-item {
@@ -113,6 +114,7 @@ main {
     width: 100%;
     box-sizing: border-box;
     padding: 0 80px;
+    height: 100%;
 }
 
 .main {
@@ -254,16 +256,14 @@ section {
     box-sizing: border-box;
     padding: inherit;
     width: 100%;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     min-height: 0;
     min-width: 0;
     border: beige dashed 1px;
-    overflow-x: scroll;
 }
 
 .article__gallery-item {
     margin: 10px;
-    overflow-y: visible;
 }
 
 .article__link {
@@ -311,7 +311,6 @@ section {
     box-sizing: border-box;
     width: fit-content;
     min-width: 0;
-    overflow: scroll;
     align-content: center;
     align-items: center;
 }
@@ -375,7 +374,7 @@ section {
 .footer {
     bottom: 0;
     margin: 0;
-    position: relative;
+    #position: relative;
     box-sizing: border-box;
     padding: 5px 80px;
     width: 100%;
@@ -473,5 +472,14 @@ section {
     .article__gallery {
         overflow-x: scroll;
         overflow-y: visible;
+    }
+    .header__logo {
+        display: none;
+    }
+    .article__gallery {
+        overflow: scroll;
+    }
+    .main {
+        display: block;
     }
 }
