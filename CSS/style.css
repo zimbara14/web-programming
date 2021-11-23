@@ -5,7 +5,7 @@
 */
 body {
     position: relative;
-    margin: 0;
+    margin: 0 0 5em;
     background: #ffe9b3;
     font-family: 'Raleway', sans-serif;
     letter-spacing: 2px;
@@ -18,7 +18,6 @@ body {
 
 /* header */
 header {
-    margin: 0;
     background: #4764B3;
     width: 100%;
     height: 100%;
@@ -374,7 +373,7 @@ section {
 .footer {
     bottom: 0;
     margin: 0;
-    #position: relative;
+    position: fixed;
     box-sizing: border-box;
     padding: 5px 80px;
     width: 100%;
@@ -482,4 +481,120 @@ section {
     .main {
         display: block;
     }
+}
+
+#todo {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    color: white;
+    padding: 20px;
+    width: 600px;
+    margin: 5em auto;
+    height: auto;
+}
+
+#todo > .todo-input-container{
+    width: 100%;
+    text-align: center;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+#todo > .todo-input-container > .todo_input {
+    width: 100%;
+    height: 40px;
+    box-sizing: border-box;
+    padding: 1rem;
+    font-size: 1.2rem;
+    outline: none;
+    border: none;
+}
+
+#todo > .todo-input-container > .add-item {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color:  #e72727;
+    line-height: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+#todo > .todo-input-container > .add-item:nth-child(2) {
+    right: 40px;
+    background-color: rgb(233, 153, 61);
+}
+
+#todo > .todo-list-container {
+    list-style: none;
+    margin: 10px 0 0;
+    padding: 0 1rem;
+}
+
+#todo > .todo-list-container .todo-list {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+#todo > .todo-list-container .todo-list .todo-item {
+    width: 100%;
+    background-color: white;
+    color: black;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+#todo > .todo-list-container .todo-list .button {
+    position: absolute;
+    right: 0;
+}
+
+#todo > .todo-list-container .todo-list .button button {
+    width: 40px;
+    height: 50px;
+    border: none;
+    color: white;
+    outline: none;
+    cursor: pointer;
+}
+
+#todo > .todo-list-container .todo-list .button .completed {
+    background-color: #3ec282;
+}
+
+#todo > .todo-list-container .todo-list .button .trash {
+    background-color: #e72727;
+}
+
+#todo > .todo-list-container .todo-list .button button i {
+    pointer-events: none;
+}
+
+.fall {
+    opacity: 0 !important;
+    transform: translateY(30px);
+    transition: .5s;
+}
+
+.line_through {
+    text-decoration: line-through;
+    opacity: 0.7;
+    transition: .3s;
+}
+
+.editBtn {
+    background-color: mediumpurple;
+}
+
+input {
+    font-family: 'Raleway', sans-serif;
 }
