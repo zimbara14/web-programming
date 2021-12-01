@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sara's blog</title>
+    <link href="CSS/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
+    <script src="JS/active.js"></script>
+
+    <script src="https://kit.fontawesome.com/525fd5b530.js" crossorigin="anonymous"></script>
+    <meta name="description" content="Personal blog about travelling, music and books.">
+    <meta name="keywords" content="music, books, travel, blog">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+<header class="header">
+    <div class="navbar">
+        <div class="header__logo">
+            <a href="index.html">
+                <img class="header__img" src="images/logo.png" alt="Sara's blog">
+            </a>
+        </div>
+
+        <nav class="header__menu">
+            <ul class="header__menu-list">
+                <li class="header__menu-item"><a class="header__menu-link" href="index.html">Главная</a></li>
+                <li class="header__menu-item"><a class="header__menu-link" href="index.html#travel">Путешествия</a></li>
+                <li class="header__menu-item"><a class="header__menu-link" href="index.html#photo">Фотография</a></li>
+                <li class="header__menu-item"><a class="header__menu-link" href="index.html#music">Музыка</a></li>
+                <li class="header__menu-item"><a class="header__menu-link" href="index.html#books">Книги</a></li>
+                <li class="header__menu-item"><a class="header__menu-link" href="todo.html">Список дел</a></li>
+                <li class="header__menu-item"><a class="header__menu-link" href="index.html#about">Обо мне</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div id="todo">
+        <div class="article__header">Список дел</div>
+        <div class="todo-input-container">
+            <input class="todo_input" type="text" placeholder="Добавить...">
+            <i class="fas fa-plus add-item"></i>
+            <i class="fas fa-trash-alt add-item deleteBtn" onclick="deleteAllElements()"></i>
+        </div>
+    </div>
+</main>
+<script src="JS/todo.js"></script>
+<footer class="footer">
+    <p>Copyright &copy; 2021 Sara Nikolic</p>
+</footer>
+</body>
+</html>
