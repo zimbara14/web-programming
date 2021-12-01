@@ -3,6 +3,7 @@
     outline: 1px solid blue;
 }
 */
+
 body {
     position: relative;
     margin: 0 0 5em;
@@ -13,8 +14,7 @@ body {
     font-weight: normal;
     box-sizing: border-box;
     background: linear-gradient(#ffe9b3, #99b4ff);
-    min-height: 90%;
-    background-attachment: fixed;
+    min-height: 100vh;
 }
 
 /* header */
