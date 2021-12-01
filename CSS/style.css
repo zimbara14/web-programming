@@ -14,6 +14,7 @@ body {
     box-sizing: border-box;
     background: linear-gradient(#ffe9b3, #99b4ff);
     min-height: 90%;
+    background-attachment: fixed;
 }
 
 /* header */
