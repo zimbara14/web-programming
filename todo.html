@@ -38,6 +38,31 @@
 </header>
 
 <main>
+    <template id="task">
+        <li class="task__list-item">
+            <p class="task__list-item-input"></p>
+            <div class="button">
+                <button class="complete fas fa-check" onclick="check(this)" type="click"></button>
+                <button class="delete fas fa-trash" type="click"></button>
+            </div>
+        </li>
+    </template>
+
+    <div class="todo-container">
+        <div class="article__header">Список дел</div>
+        <form id="todo">
+            <div class="todo__todo-input-container">
+                <textarea class="todo-input-container" placeholder="Добавить..." required></textarea>
+            </div>
+            <div class="todo__buttons">
+                <button class="add fas fa-plus" type="submit"></button>
+                <button class="delete fas fa-trash-alt" type="click"></button>
+            </div>
+        </form>
+        <ul class="todo-list"></ul>
+    </div>
+
+    <!--
     <div id="todo">
         <div class="article__header">Список дел</div>
         <div class="todo-input-container">
@@ -46,8 +71,9 @@
             <i class="fas fa-trash-alt add-item deleteBtn" onclick="deleteAllElements()"></i>
         </div>
     </div>
+    -->
 </main>
-<script src="JS/todo.js"></script>
+<script src="JS/todolist.js"></script>
 <footer class="footer">
     <p>Copyright &copy; 2021 Sara Nikolic</p>
 </footer>
