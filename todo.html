@@ -42,8 +42,8 @@
         <li class="task__list-item">
             <p class="task__list-item-input"></p>
             <div class="button">
-                <button class="complete fas fa-check" onclick="check(this)" type="click"></button>
-                <button class="delete fas fa-trash" type="click"></button>
+                <button class="complete fas fa-check" onclick="checkItem(this)" type="click"></button>
+                <button class="delete fas fa-trash" onclick="deleteItem(this)" type="click"></button>
             </div>
         </li>
     </template>
@@ -60,18 +60,16 @@
             </div>
         </form>
         <ul class="todo-list"></ul>
+        <!--
+            <li class="task__list-item" data-key="item-ID">
+                <p class="task__list-item-input">item-text</p>
+                <div class="button">
+                    <button class="complete fas fa-check" onclick="checkItem(this)" type="click"></button>
+                    <button class="delete fas fa-trash" onclick="deleteItem(this)" type="click"></button>
+                </div>
+            </li>
+         -->
     </div>
-
-    <!--
-    <div id="todo">
-        <div class="article__header">Список дел</div>
-        <div class="todo-input-container">
-            <input class="todo_input" type="text" placeholder="Добавить...">
-            <i class="fas fa-plus add-item"></i>
-            <i class="fas fa-trash-alt add-item deleteBtn" onclick="deleteAllElements()"></i>
-        </div>
-    </div>
-    -->
 </main>
 <script src="JS/todolist.js"></script>
 <footer class="footer">

@@ -13,6 +13,7 @@ todoForm.addEventListener('submit', function (e) {
     getTodos();
     todoInputField.value = '';
 });
+
 // error : when i click trash button, it wants to submit a form
 todoForm.addEventListener('click', function(e) {
     let target = e.target;
@@ -23,33 +24,39 @@ todoForm.addEventListener('click', function(e) {
     }
 });
 
-/*window.check = () => {
+window.checkItem = () => {
     let target = event.target;
     let targetButtons = target.parentElement;
-    targetButtons.parentElement.classList.add("checked");
-    console.log(targetButtons.parentElement.classList);
-
-    changeStatus();
+    let elementID = targetButtons.parentElement.getAttribute('data-key');
+    changeStatus(elementID);
     getTodos();
 };
 
-function changeStatus() {
-
-}
-
-function check() {
-    let tr = event.target;
-    let id_us = tr.parentElement.getAttribute('data-key');
-    console.log("ENTER CHECK");
+function changeStatus(elementID) {
     let todos = getTodosLocalStorage();
     Object.entries(todos).forEach(task => {
-        console.log("task: " + task);
-        for(let t of task) {
-            console.log("t: " + t);
+        if(task[0] === elementID) {
+            let tas;
+            for(let t of task) {
+                tas = {
+                    content: t.content,
+                    status: !t.status
+                };
+            }
+            let tasJson = JSON.stringify(tas);
+            localStorage.setItem(task[0], tasJson);
         }
     })
-}*/
+    getTodos();
+}
 
+window.deleteItem = () => {
+    let target = event.target;
+    let targetButtons = target.parentElement;
+    let elementID = targetButtons.parentElement.getAttribute('data-key');
+    localStorage.removeItem(elementID);
+    getTodos();
+}
 
 function getTodosLocalStorage() {
     function allStorage() {
@@ -73,9 +80,9 @@ function getTodosLocalStorage() {
 function addTodo(input) {
     function getNextID() {
         let arr = [...Object.keys(localStorage)];
-        if(arr.length === 0) return 1;
         return arr.length + 1;
     }
+
     if(input.trim()) {
         let task = {
             content: input,
@@ -96,18 +103,18 @@ function getTodos() {
                 cont = t.content;
                 stat = t.status;
             }
-            todoList.appendChild(makeTodoHtml(cont, stat));
+            todoList.appendChild(makeTodoHtml(task[0], cont, stat));
         })
     }
 }
 
-
-function makeTodoHtml(taskContent, taskStatus) {
+function makeTodoHtml(taskID, taskContent, taskStatus) {
     const clone = template.content.cloneNode(true);
     const li = clone.querySelector('.task__list-item');
     const inputText = clone.querySelector('.task__list-item-input');
 
-    li.classList.toggle('checked', taskStatus);
+    li.setAttribute('data-key', taskID);
+    inputText.classList.toggle('checked', taskStatus);
     inputText.innerHTML = taskContent;
 
     return clone;
