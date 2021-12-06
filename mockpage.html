@@ -38,34 +38,26 @@
 <main>
     <template id="template-row">
         <div class="random-user__data table__row">
-            <div class="random-user__data table__cell usr"></div>
+            <div class="random-user__data table__cell userId"></div>
             <div class="random-user__data table__cell id"></div>
-            <div class="random-user__data table__cell name"></div>
-            <div class="random-user__data table__cell email"></div>
-            <div class="random-user__data table__cell adr"></div>
-            <div class="random-user__data table__cell ph"></div>
-            <div class="random-user__data table__cell cmp"></div>
-            <div class="random-user__data table__cell web"></div>
+            <div class="random-user__data table__cell title"></div>
+            <div class="random-user__data table__cell body"></div>
         </div>
     </template>
 
 
     <section class="random-user">
-        <h2 class="article__header">Mock данные случайного пользователя</h2>
+        <h2 class="article__header">Mock данные случайных сообщений</h2>
         <div class="random-user__loader"></div>
+        <button class="random-user__button" onclick="shuffle(this)">Shuffle</button>
         <div class="random-user__table table">
             <div class="random-user__data random-user__data_header table__row">
-                <div class="random-user__data random-user__data_header table__cell">id</div>
-                <div class="random-user__data random-user__data_header table__cell">username</div>
-                <div class="random-user__data random-user__data_header table__cell">name</div>
-                <div class="random-user__data random-user__data_header table__cell">email</div>
-                <div class="random-user__data random-user__data_header table__cell">address</div>
-                <div class="random-user__data random-user__data_header table__cell">phone</div>
-                <div class="random-user__data random-user__data_header table__cell">company</div>
-                <div class="random-user__data random-user__data_header table__cell">website</div>
+                <div class="random-user__data random-user__data_header table__cell">User ID</div>
+                <div class="random-user__data random-user__data_header table__cell">Post ID</div>
+                <div class="random-user__data random-user__data_header table__cell">Title</div>
+                <div class="random-user__data random-user__data_header table__cell">Body</div>
             </div>
         </div>
-        <button class="random-user__button" onsubmit="shuffle(this)" type="submit">Shuffle</button>
         <p class="random-user__error">&#9888; Oops! Something went wrong. &#9888;</p>
     </section>
 </main>
