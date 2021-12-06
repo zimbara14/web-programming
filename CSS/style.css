@@ -488,35 +488,8 @@ section {
 }
 
 /* todolist */
-#todo > .todo__buttons > .add-item:nth-child(2) {
-    background-color: rgb(233, 153, 61);
-}
-#todo > .todo__buttons > .delete {
-    right: 40px;
-    background-color: #e72727;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    color: white;
-    cursor: pointer;
-}
-#todo > .todo__buttons > .add {
-    right: 80px;
-    background-color: rgb(233, 153, 61);
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    color: white;
-    cursor: pointer;
-}
 .todo-container {
-    outline: red solid 1px;
+    #outline: red solid 1px;
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
@@ -526,33 +499,61 @@ section {
     height: auto;
 }
 
-.todo-container > #todo {
-    outline: orange solid 1px;
+#todo {
+    #outline: purple solid 3px;
+    display: inline-flex;
+    align-content: center;
+    justify-content: center;
+    vertical-align: middle;
     width: 100%;
     text-align: center;
     position: relative;
-    margin-bottom: 50px;
-}
-
-.todo__todo-input-container {
-    display: inline-flex;
-    justify-content: flex-start;
-    align-content: space-between;
-    width: 100%;
-    height: 40px;
-    box-sizing: border-box;
-    padding: 1rem;
-    font-size: 1.2rem;
-    outline: blue solid 3px;
-    border: none;
+    margin-bottom: 20px;
 }
 
 .todo-input-container {
+    #outline: yellow solid 3px;
     resize: none;
     font-family: 'Raleway', sans-serif;
-    overflow: auto;
-    width: 200px;
-    height: 50px;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: flex-start;
+    align-content: flex-start;
+    flex-direction: row;
+    width: 100%;
+    height: 40px;
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 10px;
+    font-size: 1.2rem;
+    border: none;
+}
+
+.todo__buttons {
+    #outline: yellow solid 5px;
+    display: flex;
+    align-items: center;
+}
+
+.add {
+    width: 40px;
+    height: 40px;
+    border: none;
+    color: white;
+    outline: none;
+    cursor: pointer;
+    background-color: rgb(233, 153, 61);
+    margin-right: 10px;
+}
+
+.delete {
+    width: 40px;
+    height: 40px;
+    border: none;
+    color: white;
+    outline: none;
+    cursor: pointer;
+    background-color: #e72727;
 }
 
 .todo-list {
@@ -602,6 +603,7 @@ section {
     outline: none;
     cursor: pointer;
     background-color: #3ec282;
+    margin-right: 10px;
 }
 
 .delete {
