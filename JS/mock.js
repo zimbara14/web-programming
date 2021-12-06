@@ -38,7 +38,6 @@ function getData() {
 function displayElements(data) {
 
     function refresh() {
-        console.log("we good");
         table.style.display = 'none';
         button.style.display = 'none';
         error.style.display = 'none';
