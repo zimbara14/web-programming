@@ -14,7 +14,7 @@ todoForm.addEventListener('submit', function (e) {
     todoInputField.value = '';
 });
 
-// error : when i click trash button, it wants to submit a form
+// error: when i click trash button, it wants to submit a form
 todoForm.addEventListener('click', function(e) {
     let target = e.target;
     if(target.classList[0] === 'delete'){
@@ -78,9 +78,18 @@ function getTodosLocalStorage() {
 }
 
 function addTodo(input) {
+    function arrayMax(arr) {
+        let len = arr.length, max = -Infinity;
+        while (len--) {
+            if (Number(arr[len]) > max) max = (Number(arr[len]) > max) ? Number(arr[len]) : max;
+        }
+        return max;
+    }
+
     function getNextID() {
         let arr = [...Object.keys(localStorage)];
-        return arr.length + 1;
+        if(arr.length === 0) return 1;
+        return arrayMax(arr) + 1;
     }
 
     if(input.trim()) {
