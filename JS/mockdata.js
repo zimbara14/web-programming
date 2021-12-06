@@ -15,10 +15,6 @@ function getMockData() {
         })
 }
 
-window.shuffle = () => {
-    // stuff
-}
-
 function appendNewRows(Data) {
     const container = document.querySelector('.random-user__table');
     const template = document.querySelector('#template-row');
@@ -49,6 +45,24 @@ function displayError() {
     document.querySelector('.random-user__error').style.display = 'inline-block';
 }
 
-getMockData().then(function(data) {
-    appendNewRows(data);
-}).then(() => removeLoadingAndDisplayTable()).catch(() => displayError())
+function refresh() {
+    document.querySelector('.random-user__table').style.display = 'none';
+    document.querySelector('.random-user__button').style.display = 'none';
+    document.querySelector('.random-user__loader').style.display = 'inherit';
+    document.querySelector('.random-user__error').style.display = 'none';
+}
+
+function deleteOldRows() {
+    document.querySelector('.random-user__table').style.display = 'none';
+    document.querySelector('.random-user__table').innerHTML = "";
+}
+
+function shuffle() {
+    refresh();
+    deleteOldRows();
+    getMockData().then(function(data) {
+        appendNewRows(data)
+    }).then(() => removeLoadingAndDisplayTable()).catch(() => displayError())
+}
+
+shuffle();
