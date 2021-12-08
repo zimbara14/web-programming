@@ -7,6 +7,7 @@
     <link href="CSS/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
     <script src="JS/active.js"></script>
+    <script src="JS/time.js"></script>
     <meta name="description" content="Personal blog about travelling, music and books.">
     <meta name="keywords" content="music, books, travel, blog">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,35 +37,14 @@
         </nav>
     </div>
 </header>
+
 <main>
-    <template id="template-row">
-        <div class="random-user__data table__row">
-            <div class="random-user__data table__cell userId"></div>
-            <div class="random-user__data table__cell id"></div>
-            <div class="random-user__data table__cell title"></div>
-            <div class="random-user__data table__cell body"></div>
-        </div>
-    </template>
 
-
-    <section class="random-user">
-        <h2 class="article__header mock-header">Mock данные случайных сообщений</h2>
-        <div class="random-user__loader"></div>
-        <button class="random-user__button">Shuffle</button>
-        <div class="random-user__table table">
-            <div class="random-user__data random-user__data_header table__row">
-                <div class="random-user__data random-user__data_header table__cell">User ID</div>
-                <div class="random-user__data random-user__data_header table__cell">Post ID</div>
-                <div class="random-user__data random-user__data_header table__cell">Title</div>
-                <div class="random-user__data random-user__data_header table__cell">Body</div>
-            </div>
-        </div>
-        <p class="random-user__error">&#9888; Oops! Something went wrong. &#9888;</p>
-    </section>
 </main>
-<script src="JS/mock.js"></script>
+
 <footer class="footer">
     <p>Copyright &copy; 2021 Sara Nikolic</p>
 </footer>
+
 </body>
 </html>
