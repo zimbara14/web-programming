@@ -32,7 +32,7 @@ function getPicture() {
                                     break;
 
                                 case "black":
-                                    swal("Ты выбрал черную собаку!!");
+                                    swal("Ты выбрал черную собаку!");
                                     document.querySelectorAll(".img").forEach(el => el.style.display = 'none');
                                     document.querySelector('.img-dog-b').style.display = 'block';
                                     break;
