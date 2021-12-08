@@ -26,13 +26,13 @@ function getPicture() {
                         .then((value) => {
                             switch (value) {
                                 case "white":
-                                    swal("Ты выбрал белую собаку!");
+                                    swal("Ура!", "Ты выбрал белую собаку!",  "success");
                                     document.querySelectorAll(".img").forEach(el => el.style.display = 'none');
                                     document.querySelector('.img-dog-w').style.display = 'block';
                                     break;
 
                                 case "black":
-                                    swal("Ты выбрал черную собаку!");
+                                    swal("Ура!", "Ты выбрал черную собаку!", "success");
                                     document.querySelectorAll(".img").forEach(el => el.style.display = 'none');
                                     document.querySelector('.img-dog-b').style.display = 'block';
                                     break;
@@ -50,13 +50,13 @@ function getPicture() {
                         .then((value) => {
                             switch (value) {
                                 case "white":
-                                    swal("Ты выбрал белую кошку!");
+                                    swal("Ура!", "Ты выбрал белую кошку!", "success");
                                     document.querySelectorAll(".img").forEach(el => el.style.display = 'none');
                                     document.querySelector('.img-cat-w').style.display = 'block';
                                     break;
 
                                 case "black":
-                                    swal("Ты выбрал черную кошку!");
+                                    swal("Ура!", "Ты выбрал черную кошку!", "success");
                                     document.querySelectorAll(".img").forEach(el => el.style.display = 'none');
                                     document.querySelector('.img-cat-b').style.display = 'block';
                                     break;
