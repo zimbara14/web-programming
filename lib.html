@@ -7,7 +7,6 @@
     <link href="CSS/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
     <script src="JS/active.js"></script>
-    <script src="JS/time.js"></script>
     <script src="JS/lib.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <meta name="description" content="Personal blog about travelling, music and books.">
@@ -41,7 +40,15 @@
 </header>
 
 <main>
-    <button class="butt"></button>
+    <div class="lib-container">
+        <button id="butt" onclick="onClick()">Нажми!</button>
+        <img src="images/dog-w.jpg" class="img img-dog-w" alt="white dog">
+        <img src="images/dog-b.jpg" class="img img-dog-b" alt="black dog">
+        <img src="images/cat-w.jpg" class="img img-cat-w" alt="white cat">
+        <img src="images/cat-b.jpg" class="img img-cat-b" alt="black cat">
+        <img src="images/text.png" class="img img-del" alt="choose">
+        <button id="butt-del" onclick="deleteAll()">Удалить</button>
+    </div>
 </main>
 
 <footer class="footer">
