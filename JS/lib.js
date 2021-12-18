@@ -27,7 +27,9 @@ function startGame() {
         buttons: {
             моя: true,
             фэч: true
-        }
+        },
+        closeOnEsc: false,
+        closeOnClickOutside: false
     }).then(value => {
         buttons.forEach(e => e.style.display = 'none');
         switch (value) {
@@ -59,7 +61,9 @@ function myGame() {
                         buttons: {
                             white: true,
                             black: true
-                        }
+                        },
+                        closeOnEsc: false,
+                        closeOnClickOutside: false
                     })
                         .then((value) => {
                             switch (value) {
@@ -124,6 +128,8 @@ function deleteAll() {
         icon: "warning",
         buttons: true,
         dangerMode: true,
+        closeOnEsc: false,
+        closeOnClickOutside: false
     })
         .then((willDelete) => {
             if (willDelete) {
@@ -147,6 +153,8 @@ function fetchGame() {
             cat: true,
             dog: true
         },
+        closeOnEsc: false,
+        closeOnClickOutside: false
     })
         .then((value) => {
             switch (value) {
