@@ -7,7 +7,6 @@
     <link href="CSS/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
     <script src="JS/active.js"></script>
-    <script src="JS/lib.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <meta name="description" content="Personal blog about travelling, music and books.">
     <meta name="keywords" content="music, books, travel, blog">
@@ -31,8 +30,8 @@
                 <li class="header__menu-item"><a class="header__menu-link" href="index.html#music">Музыка</a></li>
                 <li class="header__menu-item"><a class="header__menu-link" href="index.html#books">Книги</a></li>
                 <li class="header__menu-item"><a class="header__menu-link" href="todo.html">Список дел</a></li>
-                <li class="header__menu-item"><a class="header__menu-link" href="mockpage.html">Fetch</a></li>
-                <li class="header__menu-item"><a class="header__menu-link" href="lib.html">random</a></li>
+                <li class="header__menu-item"><a class="header__menu-link" href="mockpage.html">?)</a></li>
+                <li class="header__menu-item"><a class="header__menu-link" href="lib.html">Игра</a></li>
                 <li class="header__menu-item"><a class="header__menu-link" href="index.html#about">Обо мне</a></li>
             </ul>
         </nav>
@@ -40,20 +39,29 @@
 </header>
 
 <main>
-    <div class="lib-container">
-        <button id="butt" onclick="onClick()">Нажми!</button>
+    <div class="lib-container" id="start-container">
+        <button id="butt-start" class="butt" onclick=startGame()>Нажми, чтобы начать</button>
+    </div>
+
+    <div class="lib-container" id="my-container">
+        <button class="butt" id="butt-my" onclick="myGame()">Нажми!</button>
         <img src="images/dog-w.jpg" class="img img-dog-w" alt="white dog">
         <img src="images/dog-b.jpg" class="img img-dog-b" alt="black dog">
         <img src="images/cat-w.jpg" class="img img-cat-w" alt="white cat">
         <img src="images/cat-b.jpg" class="img img-cat-b" alt="black cat">
         <img src="images/text.png" class="img img-del" alt="choose">
-        <button id="butt-del" onclick="deleteAll()">Удалить</button>
+        <button id="butt-del" class="butt" onclick="deleteAll()">Удалить</button>
+    </div>
+
+    <div class="lib-container" id="fetch-container">
+        <button id="butt-api" class="butt" onclick="fetchGame()">Го!</button>
+        <img id="img-api" class="img" alt="Pet">
     </div>
 </main>
 
 <footer class="footer">
     <p>Copyright &copy; 2021 Sara Nikolic</p>
 </footer>
-
+<script src="JS/lib.js"></script>
 </body>
 </html>

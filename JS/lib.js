@@ -1,12 +1,50 @@
+const img = document.querySelectorAll(".img");
+const dw = document.querySelector('.img-dog-w');
+const db = document.querySelector('.img-dog-b');
+const cw = document.querySelector('.img-cat-w');
+const cb = document.querySelector('.img-cat-b');
+const imgd = document.querySelector('.img-del');
+const imgapi = document.querySelector('#img-api');
+
+const buttons = document.querySelectorAll(".butt");
+const buttstart = document.querySelector("#butt-start");
+const buttmy = document.querySelector('#butt-my');
+const buttd = document.querySelector('#butt-del');
+const buttapi = document.querySelector('#butt-api');
+
+
 window.addEventListener('load', (event) =>{
-    onStart();
+    buttons.forEach(e => e.style.display = 'none');
+    buttstart.style.display = 'block';
 });
 
-function onClick() {
-    getPicture();
+function startGame() {
+    buttstart.style.display = 'none';
+    buttmy.style.display = 'block';
+    buttapi.style.display = 'block';
+
+    swal("Добропожаловать!", "Выбери:", {
+        buttons: {
+            моя: true,
+            фэч: true
+        }
+    }).then(value => {
+        buttons.forEach(e => e.style.display = 'none');
+        switch (value) {
+            case "моя":
+                buttmy.style.display = 'block';
+                imgd.style.display = 'inherit';
+                break;
+            case "фэч":
+                buttapi.style.display = 'block';
+                break;
+            default:
+                break;
+        }
+    })
 }
 
-function getPicture() {
+function myGame() {
     swal("Давай сыграем! Выбери животное:", {
         buttons: {
             cat: true,
@@ -29,16 +67,16 @@ function getPicture() {
                                     swal("Ура!", "Ты выбрал белую собаку!",  "success", {
                                         button: "Круто!",
                                     });
-                                    document.querySelectorAll(".img").forEach(el => el.style.display = 'none');
-                                    document.querySelector('.img-dog-w').style.display = 'block';
+                                    img.forEach(el => el.style.display = 'none');
+                                    dw.style.display = 'block';
                                     break;
 
                                 case "black":
                                     swal("Ура!", "Ты выбрал черную собаку!", "success", {
                                         button: "Прикольно!",
                                     });
-                                    document.querySelectorAll(".img").forEach(el => el.style.display = 'none');
-                                    document.querySelector('.img-dog-b').style.display = 'block';
+                                    img.forEach(el => el.style.display = 'none');
+                                    db.style.display = 'block';
                                     break;
                             }
                         });
@@ -57,16 +95,16 @@ function getPicture() {
                                     swal("Ура!", "Ты выбрал белую кошку!", "success", {
                                         button: "Прекрасно!",
                                     });
-                                    document.querySelectorAll(".img").forEach(el => el.style.display = 'none');
-                                    document.querySelector('.img-cat-w').style.display = 'block';
+                                    img.forEach(el => el.style.display = 'none');
+                                    cw.style.display = 'block';
                                     break;
 
                                 case "black":
                                     swal("Ура!", "Ты выбрал черную кошку!", "success", {
                                         button: "Удивительно!",
                                     });
-                                    document.querySelectorAll(".img").forEach(el => el.style.display = 'none');
-                                    document.querySelector('.img-cat-b').style.display = 'block';
+                                    img.forEach(el => el.style.display = 'none');
+                                    cb.style.display = 'block';
                                     break;
                             }
                         });
@@ -76,7 +114,7 @@ function getPicture() {
                     break;
             }
         });
-    document.querySelector('#butt-del').style.display = 'block';
+    buttd.style.display = 'block';
 }
 
 function deleteAll() {
@@ -92,9 +130,9 @@ function deleteAll() {
                 swal("Пуф!", "Фотки животного больше нет.", {
                     icon: "success",
                 });
-                document.querySelectorAll(".img").forEach(el => el.style.display = 'none');
-                document.querySelector('.img-del').style.display = 'block';
-                document.querySelector('#butt-del').style.display = 'none';
+                img.forEach(el => el.style.display = 'none');
+                imgd.style.display = 'block';
+                buttd.style.display = 'none';
             } else {
                 swal("Ура!", "Фотка остается! :)", {
                     icon: "info",
@@ -103,7 +141,34 @@ function deleteAll() {
         });
 }
 
-function onStart() {
-    document.querySelector('#butt-del').style.display = 'none';
-    document.querySelector('.img-del').style.display = 'block';
+function fetchGame() {
+    swal("Давай сыграем! Выбери животное:", {
+        buttons: {
+            cat: true,
+            dog: true
+        },
+    })
+        .then((value) => {
+            switch (value) {
+                case "cat":
+                    return fetch("https://api.thecatapi.com/v1/images/search");
+                case "dog":
+                    return fetch("https://api.thedogapi.com/v1/images/search");
+            }
+        })
+        .then(results => {
+            return results.json();
+        })
+        .then(json => {
+            imgapi.src = json[0].url;
+            imgapi.style.display = 'initial';
+        })
+        .catch(err => {
+            if (err) {
+                swal("О, нет!", "Запрос AJAX не удался!", "error");
+            } else {
+                swal.stopLoading();
+                swal.close();
+            }
+        });
 }
