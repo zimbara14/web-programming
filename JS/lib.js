@@ -5,6 +5,7 @@ const cw = document.querySelector('.img-cat-w');
 const cb = document.querySelector('.img-cat-b');
 const imgd = document.querySelector('.img-del');
 const imgapi = document.querySelector('#img-api');
+const imgapifail = document.querySelector('#img-api-del');
 
 const buttons = document.querySelectorAll(".butt");
 const buttstart = document.querySelector("#butt-start");
@@ -70,6 +71,7 @@ function myGame() {
                                 case "white":
                                     swal("Ура!", "Ты выбрал белую собаку!",  "success", {
                                         button: "Круто!",
+                                        timer: 2000
                                     });
                                     img.forEach(el => el.style.display = 'none');
                                     dw.style.display = 'block';
@@ -78,6 +80,7 @@ function myGame() {
                                 case "black":
                                     swal("Ура!", "Ты выбрал черную собаку!", "success", {
                                         button: "Прикольно!",
+                                        timer: 2000
                                     });
                                     img.forEach(el => el.style.display = 'none');
                                     db.style.display = 'block';
@@ -98,6 +101,7 @@ function myGame() {
                                 case "white":
                                     swal("Ура!", "Ты выбрал белую кошку!", "success", {
                                         button: "Прекрасно!",
+                                        timer: 2000
                                     });
                                     img.forEach(el => el.style.display = 'none');
                                     cw.style.display = 'block';
@@ -106,6 +110,7 @@ function myGame() {
                                 case "black":
                                     swal("Ура!", "Ты выбрал черную кошку!", "success", {
                                         button: "Удивительно!",
+                                        timer: 2000
                                     });
                                     img.forEach(el => el.style.display = 'none');
                                     cb.style.display = 'block';
@@ -135,6 +140,7 @@ function deleteAll() {
             if (willDelete) {
                 swal("Пуф!", "Фотки животного больше нет.", {
                     icon: "success",
+                    timer: 2000
                 });
                 img.forEach(el => el.style.display = 'none');
                 imgd.style.display = 'block';
@@ -142,12 +148,14 @@ function deleteAll() {
             } else {
                 swal("Ура!", "Фотка остается! :)", {
                     icon: "info",
+                    timer: 2000
                 });
             }
         });
 }
 
 function fetchGame() {
+    img.forEach(el => el.style.display = 'none');
     swal("Давай сыграем! Выбери животное:", {
         buttons: {
             cat: true,
@@ -159,8 +167,16 @@ function fetchGame() {
         .then((value) => {
             switch (value) {
                 case "cat":
+                    swal("Ура!", "Ты выбрал кошку!.", {
+                        icon: "success",
+                        timer: 1000
+                    });
                     return fetch("https://api.thecatapi.com/v1/images/search");
                 case "dog":
+                    swal("Ура!", "Ты выбрал собаку!.", {
+                        icon: "success",
+                        timer: 1000
+                    });
                     return fetch("https://api.thedogapi.com/v1/images/search");
             }
         })
@@ -173,7 +189,8 @@ function fetchGame() {
         })
         .catch(err => {
             if (err) {
-                swal("О, нет!", "Запрос AJAX не удался!", "error");
+                swal("О, нет!", "Запрос AJAX не удался!", "error", {timer: 1500});
+                imgapifail.style.display = 'initial';
             } else {
                 swal.stopLoading();
                 swal.close();
