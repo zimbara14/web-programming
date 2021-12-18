@@ -24,7 +24,7 @@ function startGame() {
     buttmy.style.display = 'block';
     buttapi.style.display = 'block';
 
-    swal("Добропожаловать!", "Выбери:", {
+    swal("Добро пожаловать!", "Выбери:", {
         buttons: {
             моя: true,
             фэч: true
