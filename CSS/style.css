@@ -218,14 +218,14 @@ section {
 
 .article__image {
     border: 1px solid black;
-    transition: all .3s ease-in-out;
+    #transition: all .3s ease-in-out;
     margin: 0 10px;
     #display: inline-block;
 }
 
 .article__image:hover {
-    transform: scale(2);
-    filter: drop-shadow(0 0 5px rgba(0,0,0,1));
+    #transform: scale(2);
+    #filter: drop-shadow(0 0 5px rgba(0,0,0,1));
 }
 
 .article__image_horizontal {
@@ -636,6 +636,7 @@ section {
 }
 
 .random-user__table {
+    overflow: hidden;
     display: none;
     grid-template-columns: repeat(4, minmax(100px, 1fr));
 }
