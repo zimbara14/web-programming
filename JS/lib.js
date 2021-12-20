@@ -24,13 +24,13 @@ function startGame() {
     buttmy.style.display = 'block';
     buttapi.style.display = 'block';
 
-    swal("Добро пожаловать!", "Выбери:", {
-        buttons: {
+    swal("Добро пожаловать!", "Выбери:", { // regular swal alert
+        buttons: { // customizable buttons
             моя: true,
             фэч: true
         },
-        closeOnEsc: false,
-        closeOnClickOutside: false
+        closeOnEsc: false, // forbid closing alert on Esc
+        closeOnClickOutside: false // forbid closing alert on click
     }).then(value => {
         buttons.forEach(e => e.style.display = 'none');
         switch (value) {
@@ -71,7 +71,7 @@ function myGame() {
                                 case "white":
                                     swal("Ура!", "Ты выбрал белую собаку!",  "success", {
                                         button: "Круто!",
-                                        timer: 2000
+                                        timer: 2000 // timer for auto turn off
                                     });
                                     img.forEach(el => el.style.display = 'none');
                                     dw.style.display = 'block';
@@ -127,7 +127,7 @@ function myGame() {
 }
 
 function deleteAll() {
-    swal({
+    swal({ // customizable arguments
         title: "Ты уверен?",
         text: "Фотка исчезнет!",
         icon: "warning",
@@ -164,7 +164,7 @@ function fetchGame() {
         closeOnEsc: false,
         closeOnClickOutside: false
     })
-        .then((value) => {
+        .then((value) => { // AJAX requests
             switch (value) {
                 case "cat":
                     swal("Ура!", "Ты выбрал кошку!.", {
@@ -192,8 +192,8 @@ function fetchGame() {
                 swal("О, нет!", "Запрос AJAX не удался!", "error", {timer: 1500});
                 imgapifail.style.display = 'initial';
             } else {
-                swal.stopLoading();
-                swal.close();
+                swal.stopLoading(); // Removes all loading states on the modal's buttons.
+                swal.close(); // Closes the currently open SweetAlert, as if you pressed the cancel button.
             }
         });
 }
