@@ -15,18 +15,11 @@ function rndGenerator(seed) {
 }
 
 function getData() {
-    return Promise.all([
-        fetch(rndGenerator(1)),
-        fetch(rndGenerator(2)),
-        fetch(rndGenerator(3)),
-        fetch(rndGenerator(4)),
-        fetch(rndGenerator(5)),
-        fetch(rndGenerator(6)),
-        fetch(rndGenerator(7)),
-        fetch(rndGenerator(8)),
-        fetch(rndGenerator(9)),
-        fetch(rndGenerator(10)),
-    ]).then(function (responses) {
+    const promises = [];
+    for(let i = 1; i <= 10; i++) {
+        promises.push(fetch(rndGenerator(i)));
+    }
+    return Promise.all(promises).then(function (responses) {
         return Promise.all(responses.map(function (response) {
             return response.json();
         }));
