@@ -14,7 +14,19 @@ function rndGenerator(seed) {
     return 'https://jsonplaceholder.typicode.com/posts?id=' + rnd();
 }
 
+function refresh() {
+    table.style.display = 'none';
+    button.style.display = 'none';
+    error.style.display = 'none';
+    loader.style.display = 'inherit';
+    document.querySelectorAll(".random-user__data.table__cell.userId").forEach(el => el.remove());
+    document.querySelectorAll(".random-user__data.table__cell.id").forEach(el => el.remove());
+    document.querySelectorAll(".random-user__data.table__cell.title").forEach(el => el.remove());
+    document.querySelectorAll(".random-user__data.table__cell.body").forEach(el => el.remove());
+}
+
 function getData() {
+    refresh();
     const promises = [];
     for(let i = 1; i <= 10; i++) {
         promises.push(fetch(rndGenerator(i)));
@@ -29,18 +41,6 @@ function getData() {
 }
 
 function displayElements(data) {
-
-    function refresh() {
-        table.style.display = 'none';
-        button.style.display = 'none';
-        error.style.display = 'none';
-        loader.style.display = 'inherit';
-        document.querySelectorAll(".random-user__data.table__cell.userId").forEach(el => el.remove());
-        document.querySelectorAll(".random-user__data.table__cell.id").forEach(el => el.remove());
-        document.querySelectorAll(".random-user__data.table__cell.title").forEach(el => el.remove());
-        document.querySelectorAll(".random-user__data.table__cell.body").forEach(el => el.remove());
-    }
-
     function makeHtmlElems() {
         for (let i = 0; i < 10; i++) {
             const clone = template.content.cloneNode(true);
@@ -55,7 +55,6 @@ function displayElements(data) {
             table.appendChild(clone);
         }
     }
-
     refresh();
     makeHtmlElems();
     loader.style.display = 'none';
@@ -66,6 +65,6 @@ function displayElements(data) {
 function displayError() {
     loader.style.display = 'none';
     table.style.display = 'none';
-    button.style.display = 'none';
-    error.style.display = 'inline-block';
+    button.style.display = 'block';
+    error.style.display = 'block';
 }
